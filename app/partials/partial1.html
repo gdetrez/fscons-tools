@@ -1,1 +1,77 @@
-<p>This is the partial for view 1.</p>
+<div class="container">
+  <h1>Tool to help you publish FSCONS videos</h1>
+<div class="row">
+  <div class="span12">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label">Title</label>
+        <div class="controls">
+          <input ng-model="title">
+          <select ng-model="year">
+            <option value="2011">2011</option>
+            <option value="2012" selected>2012</option>
+            <option value="2013">2013</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Speaker</label>
+        <div class="controls">
+          <input ng-model="full_name"  placeholder="Full names">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Social networks</label>
+        <div class="controls">
+          <input ng-model="twitter_name"  placeholder="@twitter">
+          <input ng-model="identica_name" placeholder="@identica">
+          <input ng-model="google_name" placeholder="google+ name">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Youtube URL</label>
+        <div class="controls">
+          <input ng-model="youtube_url"  placeholder="http://youtu.be/…">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Archive URL</label>
+        <div class="controls">
+          <input ng-model="ogv_url"  placeholder="https://archive.org/…">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Abstract</label>
+        <div class="controls">
+          <textarea ng-model="abstract"></textarea>
+        </div>
+      </div>
+  </fieldset>
+  </form>
+  Abstract
+
+  <h3>Youtube</h3>
+  <h4>Title</h4>
+  <pre id="youtube-title">{{ full_name || "[speakers]" }}: {{ title || "[short title]" }}</pre>
+  <h4>Description</h4>
+  <pre id="youtube-description">{{ full_name || "[speakers]" }}: {{ title || "[short title]" }}
+
+Download video: {{ ogv_url || "[download url]" }}
+
+{{ abstract || "[abstract]" }}
+</pre>
+
+  <h3>Twitter</h3>
+<pre id="twitter">New video: {{ twitter_name || full_name || "[speaker name/@account]" }}, {{ title || "[short title]" }} {{ youtube_url || "[short url]" }} #FSCONS{{ year }}</pre>
+
+  <h3>Identi.ca</h3>
+<pre id="identica">New video: {{ identica_name || full_name || "[speaker name/@account]" }}, {{ title || "[short title]" }} {{ youtube_url || "[short url]" }} #FSCONS{{ year }}</pre>
+
+
+  </div>
+</div>
+</div>
